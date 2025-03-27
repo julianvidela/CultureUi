@@ -1,19 +1,16 @@
 "use client"
 
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { fetchComponents } from "@/store/slices/ComponentSlice";
-import { RootState, AppDispatch } from "@/store/index";
+
+import {  useSelector } from "react-redux";
+
+import { RootState } from "@/store/index";
 
 const ComponentList = () => {
-  const dispatch = useDispatch<AppDispatch>();
+ 
   const { components, loading, error } = useSelector(
     (state: RootState) => state.components
   );
 
-  useEffect(() => {
-    dispatch(fetchComponents()); // Ya usa componentService internamente
-  }, [dispatch]);
 
   if (loading) return <p>Cargando componentes...</p>;
   if (error) return <p>Error: {error}</p>;

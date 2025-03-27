@@ -1,4 +1,4 @@
-import ComponentList from "@/routes/allcomponents/components/AllComponents/AllComponets";
+import ComponentList from "@/components/AllComponents/AllComponents";
 
 const ComponentsPage = () => {
     return <div><ComponentList/></div>;
